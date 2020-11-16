@@ -1,0 +1,6 @@
+<mat-toolbar class="mat-elevation-z6 navbar" color="primary">
+    <a class="brand" routerLink="/home" translate style="margin-right: 30px;">Angular</a>
+    <span fxFlex></span>
+    <a mat-button [routerLink]="['/home']" routerLinkActive="active"><mat-icon>home</mat-icon><span>Inicio</span></a>
+    <a mat-button [routerLink]="['/prueba']" routerLinkActive="active" (click)="openDialog()"><mat-icon>person_add</mat-icon><span>Prueba</span></a>
+</mat-toolbar>

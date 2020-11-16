@@ -1,0 +1,65 @@
+<div class="addContact">
+  <h2 style="margin-top: 70px; text-align: center; margin-bottom: 30px">Añadir Alumno</h2>
+  <form id="form" [formGroup]="formAlumno" class="example">
+
+    <!-- Nombre -->
+    <div class="nameForm">
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label style="color: black">Nombre</mat-label>
+        <input matInput formControlName="nombre" />
+        <mat-error *ngIf="formAlumno.get('nombre').hasError('nombre') && !formAlumno.get('nombre').hasError('required')">
+          Por favor introduce un nombre válido
+        </mat-error>
+        <mat-error *ngIf="formAlumno.get('nombre').hasError('required')">
+          El nombre del alumno es <strong>obligatorio</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Apellidos -->
+    <div class="apellidosForm">
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label style="color: black">Apellidos</mat-label>
+        <input matInput formControlName="apellidos" />
+        <mat-error *ngIf="formAlumno.get('apellidos').hasError('apellidos') && !formAlumno.get('apellidos').hasError('required')">
+          Por favor introduce unos apellidos válido
+        </mat-error>
+        <mat-error *ngIf="formAlumno.get('nombre').hasError('required')">
+          Los apellidos del alumno son <strong>obligatorios</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Cumpleaños -->
+    <div class="birthForm">
+      <mat-form-field appearance="fill" class="example-full-width" hideRequiredMarker color="accent">
+        <mat-label style="color: black">Fecha de Nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker1" placeholder="dd/mm/yyyy" max="{{ fechaActual | date: 'yyyy-MM-dd' }}" formControlName="birthday"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error *ngIf="formAlumno.get('birthday').hasError('required')">
+          El cumpleaños es  <strong>obligatorio</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Email -->
+    <mat-form-field appearance="fill" class="example-full-width" hideRequiredMarker color="accent">
+      <mat-label style="color: black">Email</mat-label>
+      <input matInput formControlName="email" />
+      <mat-error *ngIf="formAlumno.get('email').hasError('required')">
+        El email es  <strong>obligatorio</strong>
+      </mat-error>
+      <mat-error *ngIf="formAlumno.get('email').hasError('email') && !formAlumno.get('email').hasError('required')">
+        Por favor introduce un email válido
+      </mat-error>
+    </mat-form-field>
+
+    <div class="buttons" style="margin-top: 20px">
+      <button mat-raised-button color="primary" [disabled]="formAlumno.invalid" (click)="addAlumno()">Añadir Alumno</button>
+      <br>
+      <button mat-raised-button color="primary" style="margin-top: 20px;" [routerLink]="['/lista']">Volver atras</button>
+    </div>
+  </form>
+</div>

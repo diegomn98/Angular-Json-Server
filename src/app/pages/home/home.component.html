@@ -1,0 +1,24 @@
+<div id="page">
+    <mat-card class="mat-card" *ngFor="let datos of datosManual; let i = index">
+        <mat-card-header>
+            <mat-card-title>{{ datos.title }}</mat-card-title>
+            <mat-card-subtitle>  
+                <br>
+                <div *ngFor="let file of datos.subtitle">
+                    {{ file }}
+                    <br>
+                </div>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="texto">{{ datos.sentencia }}</p>
+            
+        </mat-card-content>
+        <div class="image" *ngIf="datos.img">
+            <p>{{ datos.imgText }}</p>
+            <div class="imgContent">
+                <img src="../../../assets/img/localhost.jpg">
+            </div>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,23 @@
+<div class="addContact">
+  <h2 style="margin-top: 70px; text-align: center; margin-bottom: 30px">Añadir Clase</h2>
+  <form id="form" class="example">
+    <div class="nameForm">
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label style="color: black">Nombre</mat-label>
+        <input matInput [formControl]="claseControl" />
+        <mat-error *ngIf="claseControl.hasError('clase') && !claseControl.hasError('required')">
+          Por favor introduce un nombre válido
+        </mat-error>
+        <mat-error *ngIf="claseControl.hasError('required')">
+          El nombre de la clase es <strong>obligatorio</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="buttons" style="margin-top: 20px">
+      <button mat-raised-button color="primary" [disabled]="claseControl.invalid" (click)="addClase()">Añadir Clase</button>
+      <br>
+      <button mat-raised-button color="primary" style="margin-top: 20px;" [routerLink]="['/prueba']">Volver atras</button>
+    </div>
+  </form>
+</div>

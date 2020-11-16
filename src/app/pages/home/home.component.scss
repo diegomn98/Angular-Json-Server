@@ -1,0 +1,46 @@
+#page{
+    width: 70%;
+    margin: 0 auto;
+    .mat-card{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-radius: 10px;
+        background-color: #E8E8E8;
+        mat-card-title{
+            font-size: 25px;
+        }
+        mat-card-subtitle{
+            font-size: 17px;
+            margin-left: 10px;
+        }
+        mat-card-content{
+            background-color: #5c5e5d;
+            color: greenyellow;
+            font-size: 18px;
+            border-radius: 5px;
+            .texto{
+                padding: 30px;
+                margin-left: 40px;
+            }
+        }
+        .image{
+
+            p{
+                margin-top: 40px;
+                font-family: Roboto, "Helvetica Neue", sans-serif;
+                line-height: 35px;
+                font-size: 17px;
+                margin-left: 10px;
+                color: grey;
+            }
+            .imgContent{
+                width: 80%;
+                margin: 0 auto;
+                img{
+                    margin-top: 15px;
+                    width: 90%;
+                }
+            }
+        }
+    }
+}

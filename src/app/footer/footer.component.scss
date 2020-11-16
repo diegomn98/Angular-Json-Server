@@ -1,0 +1,34 @@
+#footer{
+    width: 100% !important;
+    bottom: 0;
+    margin-top: 100px;
+    z-index: 1;
+    display: flex;
+    background-color: #3f51b5;
+    min-height: 400px;
+    * {
+      color: white;
+    }
+  
+    #footer__card {
+      width: 33.3%;
+      float: left;
+      background-color: #3f51b5;
+  
+      .footer-header .footer-title{
+        font-size: 1.6em;
+      }
+  
+      .footer-content{
+        margin-left: 10px;
+  
+        .listitem{
+          font-size: 1.2em;
+          a{text-decoration: none;}
+        }
+      }
+    }
+  }
+  
+  
+  
